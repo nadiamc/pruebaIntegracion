@@ -40,8 +40,8 @@ public class Controlador {
         modelAndView.setViewName("detalles");
         return modelAndView;
     }
-//localhost:8080/notification
-    @RequestMapping(value = "/notification", method = RequestMethod.POST)
+
+    @RequestMapping(value = "/notifications", method = RequestMethod.POST)
     public ResponseEntity<Object> realizarPago(@RequestBody HashMap<String,Object> notificacion) {
 
         System.out.println(notificacion.toString());
@@ -102,9 +102,9 @@ public class Controlador {
                 .build();
 
         PreferenceBackUrlsRequest preferenceBackUrlsRequest = PreferenceBackUrlsRequest.builder()
-                .failure("http://localhost:8080/failure")
-                .pending("http://localhost:8080/pending")
-                .success("http://localhost:8080/success")
+                .failure("https://tp-ejercicio.onrender.com/failure")
+                .pending("https://tp-ejercicio.onrender.com/pending")
+                .success("https://tp-ejercicio.onrender.com/success")
                 .build();
 
         PreferencePaymentMethodRequest preferencePaymentMethodRequest = PreferencePaymentMethodRequest.builder()
@@ -124,7 +124,7 @@ public class Controlador {
                 .backUrls(preferenceBackUrlsRequest)
                 .paymentMethods(preferencePaymentMethodsRequest)
                 .notificationUrl("https://tienda-mp.onrender.com/notifications")
-                .externalReference("holaasdfasdf@gmail.com")
+                .externalReference("holaejemplo@gmail.com")
                 .autoReturn("approved")
                 .build();
 

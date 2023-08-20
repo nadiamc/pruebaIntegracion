@@ -47,7 +47,7 @@ function mostrarBotonDePago(data) {
 function enviarDatosYMostrarBotonDePago(datos) {
 
     $.ajax({
-        url: "http://localhost:8080/pago",
+        url: "https://tp-ejercicio.onrender.com/pago",
         type: "POST",
         contentType: "application/json",
         data: JSON.stringify(datos)
